@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Website</title>
+    <style>
+        #right {
+            float: right;
+            width: 120px;
+            background-color: #070707;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        #left {
+            float: left;
+            width: 275px;
+            background-color: red;
+            border-radius: 20px;
+            font-style: cursive;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            gap: 10px; /* Space between text and logo */
+        }
+        #main {
+            padding-right: 130px;
+            margin: 5px;
+        }
+        .center-image {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Footer style */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #070707;
+            color: white;
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <div id="right">
+        <nav>
+            <a href="about.html" style="color: white;">The Ladies</a> | 
+            <a href="albums.html" style="color: white;">Parties</a>
+        </nav>
+    </div>
+
+    <!-- Left Section with OCTOGON Text and Logo -->
+    <div id="left">
+        <h3 style="writing-mode: vertical-lr; text-orientation: upright;">
+            O C T O G O N
+        </h3>
+        <div class="band-logo">
+            <img src="c:/Users/Dan/Pictures/octogon 4.jfif" alt="Band Logo" style="width: 195px;">
+        </div>
+    </div>
+
+    <!-- Main Section with Mission and Centered Image -->
+    <div id="main">
+        <h3>Mission</h3>
+        <p>Biophilic Technofeminist Retrofuturists</p>
+        <div class="center-image">
+            <img src="c:/Users/Dan/Pictures/octogon 3.jpg" alt="Band Performance" style="width: 160px;">
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        &copy; 2024, Daniel Keane
+    </footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

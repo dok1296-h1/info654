@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums</title>
+    <style>
+        #left {
+            float: left;
+            width: 275px;
+            background-color: red;
+            border-radius: 20px;
+            font-style: cursive;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: larger;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+        }
+        #albums-main {
+            margin-left: 300px; 
+            padding: 10px;
+        }
+
+        /* Style for album image and description */
+        .album {
+            text-align: center;
+            margin-bottom: 30px; /* Space between albums */
+        }
+
+        .album img {
+            width: 100%;
+            max-width: 300px; /* Maximum width for the album image */
+            border-radius: 10px; /* Rounded corners for the image */
+            cursor: pointer; /* Indicates it's clickable */
+        }
+
+        /* Style for the album blurb */
+        .album-description {
+            font-family: Arial, sans-serif;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Section with Name and Logo -->
+    <div id="left">
+        <h3 style="writing-mode: vertical-lr; text-orientation: upright;">
+            O C T O G O N
+        </h3>
+        <div class="band-logo">
+            <img src="c:/Users/Dan/Pictures/octogon 4.jfif" alt="Band Logo" style="width: 195px;">
+        </div>
+    </div>
+
+    <!-- Albums Main Section with Album Image and Description -->
+    <div id="albums-main">
+        <h2>Albums</h2>
+
+        <!-- Album 1 -->
+        <div class="album">
+            <a href="https://open.spotify.com/album/YOUR_ALBUM_ID" target="_blank">
+                <img src="c:/Users/Dan/Pictures/album_cover.jpg" alt="Album Cover">
+            </a>
+            <p class="album-description">
+                This is the debut album by OCTOGON, showcasing their unique sound that combines biophilic themes with technofeminist influences.
+            </p>
+        </div>
+        
+        <!-- You can add more albums in a similar structure -->
+        <!--
+        <div class="album">
+            <a href="https://open.spotify.com/album/YOUR_ALBUM_ID" target="_blank">
+                <img src="c:/Users/Dan/Pictures/another_album_cover.jpg" alt="Another Album Cover">
+            </a>
+            <p class="album-description">
+                A brief description of the second album goes here.
+            </p>
+        </div>
+        -->
+    </div>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
